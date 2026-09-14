@@ -64,7 +64,7 @@ body {
   box-shadow:
     0 0 35px rgba(85, 72, 255, .38),
     inset 0 0 28px rgba(50, 30, 110, .22);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(1px);
   overflow: hidden;
 }
 
@@ -179,7 +179,7 @@ h1 {
   border-radius: 12px;
   background: rgba(3, 5, 20, .30);
   box-shadow: 0 0 24px rgba(50,80,255,.32);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
 }
 
 .music-info { display: flex; align-items: center; gap: 10px; min-width: 0; }
@@ -218,7 +218,7 @@ h1 {
   display: grid;
   place-items: center;
   background: rgba(0, 0, 15, .42);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
 }
 .music-prompt[hidden] { display: none; }
 
@@ -270,7 +270,7 @@ h1 {
     right: auto;
     transform: none;
     width: min(92vw, 600px);
-    height: 50vh;
+    height: 76vh;
     border-radius: 12px;
     background: rgba(3,5,22,.38);
   }
