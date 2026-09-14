@@ -64,7 +64,7 @@ body {
   box-shadow:
     0 0 35px rgba(85, 72, 255, .38),
     inset 0 0 28px rgba(50, 30, 110, .22);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
   overflow: hidden;
 }
 
