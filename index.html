@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#030516">
+  <title>The Greatest Friend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+
+  <main class="screen">
+    <section class="poem-box" aria-label="The Greatest Friend poem">
+      <header>
+        <div class="eyebrow">a little something for you</div>
+        <h1>The Greatest Friend</h1>
+        <div class="pixel-line"></div>
+      </header>
+
+      <div class="scroll-area">
+        <article class="poem">
+          <p>There are people I meet along the way,<br>
+          Some stay for a moment, some for a day,<br>
+          Some leave as memories that may be forgotten.</p>
+
+          <p>And then there is you.<br>
+          Somehow, I don't quite know how—<br>
+          A person I have never stood beside,<br>
+          Yet somehow, you've been there through every side of me.</p>
+
+          <p>When happiness finds me, you're the first one I want to tell.<br>
+          When sadness weighs heavy, you're the one I know will understand as well.<br>
+          Through every strange thought, every sleepless night,<br>
+          You're there... and somehow, you always make things feel alright.</p>
+
+          <p>You became the catalyst for my creativity,<br>
+          The spark behind so many things I create.<br>
+          Sometimes I wonder if you realize<br>
+          How much of my imagination comes alive<br>
+          Simply because you exist.</p>
+
+          <p>Perhaps that's what makes you so special.</p>
+
+          <p>We have never met in real life,<br>
+          Never watched the same moon side by side,<br>
+          Never sat together and talked about how beautiful the night is,<br>
+          Yet you've known me in ways that people much closer never have.</p>
+
+          <p>Distance has never felt like distance with you.<br>
+          A screen has never felt like a wall.<br>
+          Because somehow, across all those miles,<br>
+          You've managed to be there<br>
+          When I needed someone most of all.</p>
+
+          <p>I want to say:</p>
+
+          <p class="thank-you">Thank you~</p>
+
+          <p>Thank you for listening.<br>
+          Thank you for understanding.<br>
+          Thank you for every laugh.</p>
+
+          <p>Thank you for being the person I can come to with anything—<br>
+          The good, the bad, the ridiculous,<br>
+          The things that make me laugh.</p>
+
+          <p>Thank you for inspiring me<br>
+          To create, to dream, to keep going.<br>
+          Thank you for knowing me<br>
+          And still choosing to call me your friend.</p>
+
+          <p>I don't know where fate will take us,<br>
+          Or how many years will pass for this friendship,<br>
+          But I hope that somewhere along the way,<br>
+          You will always remember this:</p>
+
+          <p class="emphasis">Out of all the people I've ever known,<br>
+          Out of all the friendships I've ever had,<br>
+          There is one thing I will always be grateful for:</p>
+
+          <p class="big-line">I got to know you.</p>
+
+          <p>And even though we've never met beneath the same sky,<br>
+          You've still managed to become<br>
+          One of the brightest stars in mine.</p>
+
+          <p class="final-lines">You are more than just a friend.<br>
+          You are my <span>GREATEST FRIEND.</span></p>
+        </article>
+      </div>
+    </section>
+  </main>
+<div class="music-player" role="region" aria-label="Music controls">
+    <div class="music-info">
+      <div class="music-dot"></div>
+      <div class="track">
+        <div class="music-label">NOW PLAYING</div>
+        <div class="song-name">I Really Want to Stay At Your House</div>
+        <div class="artist">Rosa Walton</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="playBtn" class="control" type="button" aria-label="Play or pause">▶</button>
+      <button id="stopBtn" class="control" type="button" aria-label="Stop">■</button>
+      <button id="repeatBtn" class="control active" type="button" aria-label="Toggle repeat" title="Repeat">↻</button>
+    </div>
+    <div id="audioStatus" class="audio-status">Music will try to start automatically.</div>
+  </div>
+
+  <audio id="bgMusic" preload="auto" loop>
+    <source src="audio/song.mp3" type="audio/mpeg">
+  </audio>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+* { box-sizing: border-box; }
+
+:root {
+  --text: #f2f0ff;
+  --muted: #aaa7c9;
+  --pink: #ff65ff;
+  --blue: #69b5ff;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #020415;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Pixelify Sans", system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url("assets/desktop.png") center center / cover no-repeat;
+  image-rendering: pixelated;
+  transform: scale(1.01);
+}
+
+.shade {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(0, 0, 20, .04) 0 35%, rgba(0,0,14,.42) 100%),
+    linear-gradient(rgba(2,4,18,.16), rgba(2,4,18,.28));
+}
+
+.screen {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 5vh 18px 110px;
+  display: grid;
+  place-items: center;
+}
+
+.poem-box {
+  position: absolute;
+  top: 50%;
+  right: 5vw;
+  transform: translateY(-50%);
+  width: min(720px, 44vw);
+  height: min(78vh, 760px);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(151, 122, 255, .62);
+  border-radius: 14px;
+  background: rgba(4, 6, 27, .30);
+  box-shadow:
+    0 0 35px rgba(85, 72, 255, .38),
+    inset 0 0 28px rgba(50, 30, 110, .22);
+  backdrop-filter: blur(3px);
+  overflow: hidden;
+}
+
+header {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid rgba(122, 110, 220, .28);
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: #aaa7c9;
+  font: 7px/1.6 "Press Start 2P", monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font: clamp(18px, 3vw, 29px)/1.45 "Press Start 2P", monospace;
+  text-shadow: 2px 2px 0 #39229a, 0 0 14px rgba(117, 94, 255, .8);
+}
+
+.pixel-line {
+  width: 220px;
+  max-width: 70%;
+  height: 4px;
+  margin: 16px auto 0;
+  background: repeating-linear-gradient(90deg,
+    var(--pink) 0 8px, transparent 8px 12px,
+    var(--blue) 12px 20px, transparent 20px 24px);
+  box-shadow: 0 0 10px rgba(255, 78, 255, .5);
+}
+
+.scroll-area {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 25px clamp(22px, 4vw, 52px) 35px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 91, 255, .75) rgba(15, 16, 45, .7);
+}
+
+.scroll-area::-webkit-scrollbar { width: 8px; }
+.scroll-area::-webkit-scrollbar-track { background: rgba(15,16,45,.65); }
+.scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(255,91,255,.72);
+  border-radius: 4px;
+}
+
+.poem {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.72;
+  letter-spacing: .01em;
+  text-shadow: 1px 2px 3px #000;
+}
+
+.poem p { margin: 0 0 1.75em; }
+
+.thank-you, .big-line {
+  text-align: center;
+  font-family: "Press Start 2P", monospace;
+  color: #fff;
+  text-shadow: 2px 2px 0 #76238a, 0 0 14px rgba(255, 73, 255, .7);
+}
+
+.thank-you {
+  font-size: clamp(12px, 1.5vw, 15px);
+  margin: 2.2em 0 !important;
+}
+
+.emphasis { text-align: center; }
+
+.big-line {
+  font-size: clamp(14px, 1.7vw, 18px);
+  line-height: 1.9;
+  margin: 2em 0 2.2em !important;
+}
+
+.final-lines {
+  text-align: center;
+  font: clamp(11px, 1.4vw, 14px)/2 "Press Start 2P", monospace;
+  margin-top: 3em !important;
+}
+
+.final-lines span {
+  display: inline-block;
+  margin-top: 9px;
+  color: #ff91ff;
+  text-shadow: 2px 2px 0 #79238c, 0 0 17px rgba(255, 73, 255, .85);
+}
+
+.music-player {
+  position: fixed;
+  right: 5vw;
+  left: auto;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  transform: none;
+  z-index: 10;
+  width: min(720px, 44vw);
+  right: 5vw;
+  left: auto;
+  transform: none;
+  padding: 10px 13px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 7px 14px;
+  align-items: center;
+  border: 1px solid rgba(110, 147, 255, .6);
+  border-radius: 12px;
+  background: rgba(3, 5, 20, .30);
+  box-shadow: 0 0 24px rgba(50,80,255,.32);
+  backdrop-filter: blur(10px);
+}
+
+.music-info { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.music-dot {
+  width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%;
+  background: var(--pink); box-shadow: 0 0 11px var(--pink);
+}
+.track { min-width: 0; }
+.music-label { font: 6px "Press Start 2P", monospace; color: #8eafff; margin-bottom: 4px; }
+.song-name { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.artist { color: var(--muted); font-size: 11px; }
+
+.controls { display: flex; gap: 6px; }
+.control {
+  width: 38px; height: 34px;
+  border: 1px solid rgba(137,111,255,.7);
+  border-radius: 7px;
+  color: #fff; background: rgba(27,21,73,.9);
+  font: 15px monospace; cursor: pointer;
+}
+.control:hover, .control.active {
+  border-color: #ff71ff;
+  box-shadow: 0 0 12px rgba(255,74,255,.45);
+}
+.audio-status {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #8e8ba8;
+  font-size: 10px;
+}
+
+.music-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 15, .42);
+  backdrop-filter: blur(2px);
+}
+.music-prompt[hidden] { display: none; }
+
+.prompt-card {
+  width: min(360px, calc(100% - 36px));
+  padding: 28px 22px 24px;
+  text-align: center;
+  border: 1px solid rgba(255, 103, 255, .65);
+  border-radius: 13px;
+  background: rgba(5, 7, 29, .93);
+  box-shadow: 0 0 35px rgba(116, 65, 255, .48);
+}
+.prompt-symbol {
+  color: #ff7cff;
+  font: 28px "Press Start 2P", monospace;
+  text-shadow: 0 0 14px #ff50ff;
+}
+.prompt-title {
+  margin-top: 18px;
+  font: 13px/1.6 "Press Start 2P", monospace;
+}
+.prompt-text { margin: 13px 0 20px; color: #bbb8d4; }
+#startMusicBtn {
+  border: 1px solid #ff70ff;
+  border-radius: 7px;
+  padding: 11px 15px;
+  color: white;
+  background: rgba(111, 35, 132, .5);
+  font: 9px "Press Start 2P", monospace;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(255,70,255,.3);
+}
+
+@media (max-width: 700px) {
+  body { overflow: hidden; }
+  .backdrop {
+    background-image: url("assets/mobile.png");
+    background-position: center top;
+  }
+  .screen {
+    padding: 18px 10px 95px;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  .poem-box {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: min(92vw, 600px);
+    height: 76vh;
+    border-radius: 12px;
+    background: rgba(3,5,22,.38);
+  }
+  header { padding: 20px 16px 15px; }
+  .poem {
+    font-size: 14px;
+    line-height: 1.68;
+  }
+  .scroll-area { padding: 20px 17px 28px; }
+  .music-player {
+    width: calc(100% - 14px);
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    grid-template-columns: 1fr auto;
+    padding: 9px 10px;
+    background: rgba(3,5,20,.30);
+  }
+}
+
+@media (max-width: 430px) {
+  .music-player { grid-template-columns: 1fr; }
+  .controls { justify-content: center; }
+  .audio-status { font-size: 9px; }
+}
+
+
+/* VERSION 6: breathing room between the poem and music player on wide screens */
+@media (min-width: 901px) {
+  .music-player {
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .poem-box {
+    top: calc(50% - 52px);
+  }
+}
+
+/* VERSION 7: no intrusive music-start popup */
+.music-prompt,
+.music-overlay,
+.music-modal,
+.autoplay-prompt,
+.autoplay-overlay,
+.start-music-popup {
+  display: none !important;
+}
