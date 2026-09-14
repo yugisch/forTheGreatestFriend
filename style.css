@@ -318,3 +318,87 @@ h1 {
 .start-music-popup {
   display: none !important;
 }
+
+
+/* MOBILE LAYOUT FIX v11 */
+@media (max-width: 700px) {
+  html, body {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  body {
+    min-height: 100svh;
+    padding: 18px 12px 28px;
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .poem-box, .poem-card, .poem-container {
+    width: min(94vw, 620px) !important;
+    max-width: 94vw !important;
+    height: 68svh !important;
+    max-height: 68svh !important;
+    min-height: 0 !important;
+    margin: 0 auto 18px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+  }
+
+  .music-box, .music-player, .player, .audio-player {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: min(94vw, 620px) !important;
+    max-width: 94vw !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+
+  .music-box .controls, .music-player .controls,
+  .player .controls, .audio-player .controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .music-box button, .music-player button,
+  .player button, .audio-player button {
+    min-width: 52px;
+    min-height: 52px;
+  }
+
+  h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
+  body::before, .background, .bg, .background-image {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100svh !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body { padding: 10px 8px 20px; }
+
+  .poem-box, .poem-card, .poem-container,
+  .music-box, .music-player, .player, .audio-player {
+    width: 96vw !important;
+    max-width: 96vw !important;
+  }
+
+  .poem-box, .poem-card, .poem-container {
+    height: 64svh !important;
+    max-height: 64svh !important;
+  }
+}
