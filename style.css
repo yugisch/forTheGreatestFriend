@@ -179,7 +179,7 @@ h1 {
   border-radius: 12px;
   background: rgba(3, 5, 20, .30);
   box-shadow: 0 0 24px rgba(50,80,255,.32);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1px);
 }
 
 .music-info { display: flex; align-items: center; gap: 10px; min-width: 0; }
@@ -218,7 +218,7 @@ h1 {
   display: grid;
   place-items: center;
   background: rgba(0, 0, 15, .42);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
 }
 .music-prompt[hidden] { display: none; }
 
@@ -336,7 +336,7 @@ h1 {
   .thank-you { font-size: 12px; }
   .big-line { font-size: 14px; line-height: 1.9; }
   .final-lines { font-size: 11px; line-height: 2; margin-top: 3em !important; margin-bottom: 2em !important; }
-  .music-player { position: fixed; z-index: 50; left: 10px; right: 10px; bottom: max(10px,env(safe-area-inset-bottom)); width: auto; max-width: none; transform: none; margin: 0; padding: 9px 11px; grid-template-columns: 1fr auto; gap: 6px 10px; border-radius: 11px; background: rgba(3,5,20,.30); backdrop-filter: blur(10px); box-shadow: 0 0 22px rgba(50,80,255,.25); }
+  .music-player { position: fixed; z-index: 50; left: 10px; right: 10px; bottom: max(10px,env(safe-area-inset-bottom)); width: auto; max-width: none; transform: none; margin: 0; padding: 9px 11px; grid-template-columns: 1fr auto; gap: 6px 10px; border-radius: 11px; background: rgba(3,5,20,.30); backdrop-filter: blur(1px); box-shadow: 0 0 22px rgba(50,80,255,.25); }
   .music-info { gap: 9px; }
   .song-name { font-size: 12px; }
   .artist { font-size: 10px; }
