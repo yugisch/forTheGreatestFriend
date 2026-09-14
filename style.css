@@ -270,7 +270,7 @@ h1 {
     right: auto;
     transform: none;
     width: min(92vw, 600px);
-    height: 76vh;
+    height: 40vh;
     border-radius: 12px;
     background: rgba(3,5,22,.38);
   }
