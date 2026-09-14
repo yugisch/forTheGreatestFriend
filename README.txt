@@ -1,15 +1,21 @@
-THE GREATEST FRIEND — WEBSITE v9
+The Greatest Friend — Pixel Night Website
 
-MUSIC SETUP
------------
-Put your own authorized MP3 in:
-audio/song.mp3
+A responsive little poem website using the cyberpunk pixel-art wallpapers
 
-Then open index.html.
+## Included
+- `index.html` — the poem and music player
+- `style.css` — responsive cyberpunk/pixel styling
+- `script.js` — Play/Pause, Stop, and Repeat controls
+- `assets/desktop.png` — widescreen wallpaper
+- `assets/mobile.png` — vertical mobile wallpaper
+- `audio/` — place the song here
 
-The Play button no longer waits for the canplaythrough event, which could
-prevent playback for some local MP3 files. It calls the browser's audio
-playback directly and reports any actual file/playback error in the small
-music player.
+## Music
+The player is set up for:
+**I Really Want to Stay At Your House — Rosa Walton**
+The browser may require the visitor to press Play before audio can start; this is normal browser autoplay behavior.
 
-There is no music-start popup.
+## Opening the website
+You can simply double-click `index.html` on most computers.
+
+
